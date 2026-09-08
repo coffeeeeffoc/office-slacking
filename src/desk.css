@@ -1,0 +1,90 @@
+.game, .game * { -webkit-user-select: none; user-select: none; }
+.game input, .game textarea, .game [contenteditable]:not([contenteditable="false"]) { -webkit-user-select: text; user-select: text; }
+.game img { -webkit-user-drag: none; }
+.desk-renderer { position: absolute; inset: 0; z-index: 5; pointer-events: none; overflow: clip; }
+.desk-renderer > div { pointer-events: none; }
+.physical-desk .desk-surface { top: 0; left: 0; right: auto; bottom: auto; max-width: none; margin: 0; transform-origin: 50% 50%; backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: none; }
+.physical-desk .monitor { color: #3b453a; }
+.physical-desk .monitor-bezel { padding: 10px 10px 17px; border-radius: 6px; box-shadow: none; border-width: 1px; }
+.physical-desk .monitor-neck, .physical-desk .monitor-base { display: none; }
+.physical-desk .monitor-brand { bottom: 5px; font-size: 5px; }
+.physical-desk .display { font-size: 12px; border-radius: 2px; }
+.physical-desk .desktop-bar { height: 20px; font-size: 10px; padding: 0 12px; }
+.physical-desk .app-tabs { height: 30px; padding: 3px 6px 0; }
+.physical-desk .app-tabs button { height: 27px; padding: 6px 12px; font-size: 11px; }
+.physical-desk .tab-dot { margin-left: 18px; }
+.physical-desk .work-app, .physical-desk .break-app { height: 294px; }
+.physical-desk .sheet-menu { display: flex; height: 24px; font-size: 10px; gap: 19px; }
+.physical-desk .formula-bar { display: flex; height: 24px; font-size: 11px; }
+.physical-desk .empty-row { display: none; }
+.physical-desk .row-num { width: 24px; }
+.physical-desk .amount-col { width: 26%; }
+.physical-desk td, .physical-desk th { height: 26px; padding: 0 10px; font-size: 11px; }
+.physical-desk thead th { height: 17px; font-size: 9px; }
+.physical-desk tbody th { padding: 0; font-size: 9px; }
+.physical-desk .sheet-title-row td { height: 32px; font-size: 13px; }
+.physical-desk .sheet-title-row td span { font-size: 9px; }
+.physical-desk .sheet-heading td { height: 24px; font-size: 10px; }
+.physical-desk .total-row td { height: 33px; }
+.physical-desk .editable-cell { padding: 0; }
+.physical-desk .editable-cell input { padding: 0 9px; min-height: 31px; font-size: 13px; touch-action: auto; }
+.physical-desk .work-footer { min-height: 43px; padding: 6px 11px; }
+.physical-desk .work-footer > span { font-size: 10px; max-width: 66%; }
+.physical-desk .work-footer button { min-height: 30px; font-size: 11px; padding: 7px 11px; }
+.physical-desk .sheet-bottom { height: 25px; padding: 6px 12px; font-size: 9px; }
+.physical-desk .computer-taskbar { display: flex; height: 24px; font-size: 11px; }
+.physical-desk .return-work { height: 40px; font-size: 12px; }
+.physical-desk .break-heading { font-size: 9px; }
+.physical-desk .escape-copy h2 { font-size: 30px; }
+.physical-desk .escape-copy > span, .physical-desk .escape-copy p { font-size: 11px; }
+.physical-desk .escape-caption { font-size: 9px; }
+.physical-desk .finance-message { position: absolute; left: 12px; top: 62px; width: 350px; padding: 11px 30px 11px 12px; transform: none; animation: none; font-size: 11px; z-index: 7; backdrop-filter: none; box-shadow: 0 5px 14px #27352230; }
+.physical-desk .finance-message b { font-size: 12px; }
+.physical-desk .finance-message small { font-size: 10px; }
+.physical-desk .finance-message p br { display: none; }
+.physical-desk .finance-message .message-avatar { width: 28px; height: 28px; }
+.physical-desk .desk-note { padding: 25px 16px 16px; height: 254px; font-size: 12px; box-shadow: none; }
+.physical-desk .desk-note h2 { font-size: 13px; margin: 12px 0 17px; }
+.physical-desk .desk-note > div { margin: 12px 0; }
+.physical-desk .desk-note hr, .physical-desk .desk-note p, .physical-desk .note-signature { display: block; }
+.physical-desk .desk-note p { font-size: 12px; }
+.physical-desk .note-date { font-size: 9px; }
+.physical-desk .phone-wrap { height: 296px; }
+.physical-desk .phone { border-radius: 21px; box-shadow: none; }
+.physical-desk .phone-shadow { display: none; }
+.physical-desk .phone-hand { clip-path: none; }
+.physical-desk .phone-lock > p { margin: 5px 0 20px; }
+.physical-desk .phone-pick-hint { margin-top: 24px; }
+.physical-desk .phone-notification { font-size: 7px; }
+.physical-desk .sea-photo { height: 100px; }
+.physical-desk .phone-tip { bottom: -34px; font-size: 13px; transform: translateX(-50%); }
+.physical-desk .phone-tip svg { width: 13px; height: 13px; }
+.physical-desk .stow-button { bottom: -43px; font-size: 12px; padding: 9px; }
+.physical-desk .coffee-hotspot { height: 100px; background: transparent; }
+.physical-desk .coffee-hotspot .hotspot-dot { display: none; }
+.physical-desk .object-label { top: 9px; left: 1px; min-width: 107px; font-size: 13px; }
+.physical-desk .drawer-target { height: 59px; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.physical-desk .drawer-target > span { visibility: hidden; }
+.physical-desk.dragging-phone .drawer-target { height: 59px; background: #d8e0b4af; border: 2px dashed #f8f0ce; }
+.physical-desk .drawer-target small { font-size: 12px; }
+
+/* Looking straight at the desk leaves the screen's tabs unobstructed. */
+.physical-desk:not(.looking-away) .look-directions,
+.physical-desk:not(.looking-away) #look-direction,
+.physical-desk:not(.looking-away) .look-instruction { display: none; }
+@media (max-width: 700px) {
+  .physical-desk:not(.looking-away) .look-controls { top: 82px; }
+  .physical-desk:not(.looking-away) .shift,
+  .physical-desk:not(.looking-away) .route-note { visibility: hidden; }
+  .physical-desk .sheet-menu, .physical-desk .formula-bar, .physical-desk .computer-taskbar { display: none; }
+  .physical-desk .work-app, .physical-desk .break-app { height: 242px; }
+  .physical-desk td, .physical-desk th { font-size: 13px; padding-inline: 8px; }
+  .physical-desk .sheet-title-row td { font-size: 15px; }
+  .physical-desk .sheet-title-row td span { display: none; }
+  .physical-desk .sheet-heading td { font-size: 12px; }
+  .physical-desk .app-tabs button { font-size: 13px; padding-inline: 9px; }
+  .physical-desk .tab-dot { margin-left: 5px; }
+  .physical-desk .editable-cell input { font-size: 15px; }
+  .physical-desk .work-footer button { font-size: 13px; }
+  .physical-desk .work-footer > span { font-size: 11px; }
+}

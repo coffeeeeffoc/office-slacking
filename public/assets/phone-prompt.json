@@ -1,0 +1,12 @@
+{
+  "mode": "built-in image_gen",
+  "file": "exec-167e1454-e616-4690-9c22-aba307babc8e.png",
+  "prompt": "Use case: photorealistic-natural\nAsset type: portrait transparent PNG raster cutout of hand and phone as one compositing layer for a first-person realistic Chinese office H5 game.\nPrimary request: a photorealistic adult's RIGHT hand and forearm holding a slim black smartphone vertically. First-person viewpoint: we see the phone screen facing the camera directly straight-on, with an axis-aligned rectangular screen: vertical edges perfectly vertical, horizontal top and bottom edges perfectly horizontal, NO perspective tilt, no rotation. The phone should be large in the upper half of a 1024x1536 portrait composition with generous top margin. Show the entire phone and its full screen unobscured by fingers.\nHand: the right thumb gently rests along the phone's LEFT bezel without covering the screen; fingers naturally curl behind the phone and contact the RIGHT edge. Preserve anatomically believable grasp contacts. A forearm extends below and exits the lower-right edge; light beige cotton cuff at lower right, neutral natural skin, no jewelry.\nScreen: completely blank flat uniform dark screen, without any text, apps, UI, logos or imagery, designed for later HTML overlay. Clearly defined rectangular illuminated display inset within a slim black border, subtle rounded corners, no reflections or glare across the display, no notch or camera cutout on the display.\nLighting/style: realistic photographic skin texture and material detail, warm daylight from image left, matching a warm late-afternoon modest Shanghai office.\nBackground requirement: actual fully transparent background with real alpha channel, suitable for direct compositing. No office, desk, ground, scenery, shadow plane, painted checkerboard or solid background. Only the connected right hand, forearm and smartphone are present.\nComposition constraints: portrait 1024x1536, phone takes approximately central 48 percent image width and starts at 10 percent image height; phone bottom roughly 70 percent image height, arm extends to bottom-right. Preserve full phone and comfortable transparent margin around phone top and sides. No text or watermark.",
+  "screen": {
+    "left": 282,
+    "top": 82,
+    "right": 692,
+    "bottom": 948,
+    "cornerRadius": 40
+  }
+}

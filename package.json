@@ -1,0 +1,17 @@
+{
+  "name": "office-slacking",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check src/main.js && node --check src/game.js && node --check src/sound.js && node --check src/look.js && node --check src/space.js && node --check src/room.js && node --check src/people.js && node --check src/desk.js",
+    "postinstall": "node scripts/vendor.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  }
+}

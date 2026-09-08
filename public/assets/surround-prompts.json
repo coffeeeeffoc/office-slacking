@@ -1,0 +1,66 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "assets": [
+    {
+      "name": "office-panorama",
+      "generatedPath": "C:/Users/15211/.codex/generated_images/01a07f0a-276f-7e01-a730-ad47cb7c3ba6/exec-c03a3eb6-e53f-4d7f-9c56-27501b96e44e.png",
+      "width": 1774,
+      "height": 887,
+      "prompt": "Use case: photorealistic-natural\nAsset type: first-person office game 360-degree spherical background texture.\nInput image 1 is a STYLE AND ARCHITECTURE REFERENCE ONLY: preserve its ordinary Shanghai office, warm late-afternoon daylight, beige oak desks, olive low fabric dividers, tall left windows with blinds, exposed painted ceiling services, glass meeting rooms on the right.\nPrimary request: produce ONE TRUE EQUIRECTANGULAR 360 x 180 DEGREE PANORAMA in a 2:1 raster, ideally 3072 x 1536 pixels. This must be the latitude-longitude texture for viewing from inside a sphere, NOT a wide-angle perspective photograph. Camera is one fixed point seated at 1.2 meters above the floor. Horizon is at exactly 50% image height. Longitude wraps continuously left to right. Top is zenith ceiling, bottom is nadir under desk/floor, with correct spherical distortion approaching poles.\nCoordinate layout: image center longitude is looking FORWARD into the office from behind a broad clean pale oak work desk; this forward sector matches the reference composition with low olive desk dividers and an office aisle in the background. Broad clear foreground oak desktop is visible below the forward horizon for HTML overlays, no monitor or phone. Quarter-width longitude faces LEFT towards neighbouring workstations, tall windows, plants and a shared printer area. Three-quarter-width longitude faces RIGHT toward the glass meeting room corridor and an unobtrusive notice board without readable text. Both extreme horizontal edges meet seamlessly at the BACK direction showing a rear office entrance and water station; same connected architecture crosses the seam.\nA believable continuous connected office room around the camera in every direction. Full ceiling above, floor and desk below. Materials and natural lighting match input image 1. Sharp realistic architecture, lived-in but tidy office details.\nAvoid: people, foreground computer monitors, foreground phones, text, logos, watermark, panels, collage, split view, duplicated disconnected architecture, rectilinear wide photo disguised as panorama. The output should look like a proper environment map, with stretched zenith and nadir, and seamless horizontal wrap.",
+      "referenceImages": [
+        "F:/playground/playground-ai/office-slacking/public/assets/office.png"
+      ],
+      "verification": "2:1 ratio, opaque; visually panoramic spherical distortion and center aisle checked. Seam exactness requires in-game view."
+    },
+    {
+      "name": "colleague",
+      "generatedPath": "C:/Users/15211/.codex/generated_images/01a07f0a-276f-7e01-a730-ad47cb7c3ba6/exec-0cef1f63-5c3d-483e-9bc8-a53df932fe50.png",
+      "projectPath": "F:/playground/playground-ai/office-slacking/public/assets/colleague.png",
+      "width": 1024,
+      "height": 1536,
+      "prompt": "Use case: photorealistic-natural\nAsset type: full-body coworker sprite for a first-person office game, PNG WITH TRUE TRANSPARENT ALPHA BACKGROUND.\nCreate ONE isolated Chinese male coworker early 30s with short natural dark hair, realistic proportions and subtly friendly smile. Wearing an olive overshirt open over a cream tee, khaki trousers, clean white sneakers. Relaxed natural upright standing posture in three-quarter orientation, glancing slightly toward viewer-right, holding one simple ceramic mug around waist. Full body from hair to both completely visible sneakers, with small margin. Seated viewer camera height 1.2 meters, normal lens. Warm late-afternoon office window light from viewer-left, realistic skin and clothing textures.\nBackground must be entirely truly TRANSPARENT (alpha=0), preserving only the figure and mug. Generate as a transparent-background cutout, NOT a rendered image of a cutout. Do NOT paint checkerboard squares or any white/gray/black backdrop. No floor, no ground shadow, no surroundings, no glow, no vignette, no text or logo.",
+      "referenceImages": [],
+      "verification": {
+        "alphaSamplingStep": 8,
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentSamples": 18428,
+        "nonzeroSamples": 6148
+      }
+    },
+    {
+      "name": "boss-standing",
+      "generatedPath": "C:/Users/15211/.codex/generated_images/01a07f0a-276f-7e01-a730-ad47cb7c3ba6/exec-191beba4-0ad4-4406-a5c2-eac841cb14de.png",
+      "projectPath": "F:/playground/playground-ai/office-slacking/public/assets/boss-standing.png",
+      "width": 1024,
+      "height": 1536,
+      "prompt": "Use case: photorealistic-natural\nAsset type: full-body manager sprite for a first-person office game, PNG WITH TRUE TRANSPARENT ALPHA BACKGROUND.\nCreate ONE isolated Chinese male manager late30s with natural dark parted short hair sweeping outward at the temples, a handsome ordinary oval face, straight eyebrows, warm almond-shaped eyes, straight nose, lightly squared jaw, clean-shaven, calm slightly friendly smile. Wearing a pale blue button-up shirt with rolled sleeves, navy blue lanyard with a blank white rectangular badge, wristwatch, charcoal tailored trousers, black belt and dark brown office shoes. One arm holds a beige paper folder against his chest, other arm relaxed at his side. Relaxed natural upright standing posture in three-quarter orientation looking toward viewer. Full body from hair to both completely visible shoes, with small margin. Seated viewer camera height 1.2 meters, normal lens. Warm late-afternoon office window light from viewer-left, realistic skin and clothing textures.\nBackground must be entirely truly TRANSPARENT (alpha=0), preserving only the figure and folder. Generate as a transparent-background cutout, NOT a rendered image of a cutout. Do NOT paint checkerboard squares or any white/gray/black backdrop. No floor, no ground shadow, no surroundings, no glow, no vignette, no text or logo.",
+      "referenceImages": [],
+      "verification": {
+        "alphaSamplingStep": 8,
+        "alphaRange": [
+          0,
+          254
+        ],
+        "transparentSamples": 18522,
+        "nonzeroSamples": 6054,
+        "cornerAlpha": 0
+      },
+      "note": "Reference-based edits repeatedly returned baked opaque checkerboard and were rejected. Final successful alpha image used a written description of the reference manager; visually similar identity and matching attire, not pixel-identical face."
+    }
+  ],
+  "rejectedManagerEdits": [
+    {
+      "prompt": "Use case: background-extraction\nInput image is a manager full-body photograph with an unwanted checkerboard pattern baked into its background.\nRemove only every part of that background and output an isolated transparent-background full-body character PNG. This requires a genuinely transparent background, actual alpha=0 pixels outside the man, NOT any background painted white, gray, black, patterned or checkerboard. Keep EXACTLY this man's face, hair, pale blue rolled-sleeve shirt, lanyard, beige folder, charcoal trousers, brown shoes, anatomy, pose, proportions, lighting and full-body framing. Do not change the man's appearance. Clean silhouette with crisp natural hair edges. No glow, no shadow outside his shoes, no vignette, no backdrop. Only this person and his folder remain.",
+      "output": "exec-ca94cb24-e863-4d41-bb33-44fa4d1b88c0.png",
+      "reason": "Alpha=255 throughout; baked checkerboard"
+    },
+    {
+      "prompt": "Use case: identity-preserve.\nCreate a transparent PNG full-body photographic cutout of the office manager from reference image 1, using the true transparent alpha output format of reference image 2.\nReference 1 provides the exact manager identity: same Chinese male face, parted dark hair, pale blue rolled-sleeve shirt, navy lanyard with blank badge, beige folder, dark trousers, wristwatch. Preserve him recognizably. Extend his pose to show all of his legs and dark brown office shoes, natural restrained friendly standing posture, full body head to feet. Normal proportions. One hand holds his beige folder at his chest, other arm relaxed. Warm late-afternoon light from viewer-left. Camera eye height 1.2 meters.\nReference 2 demonstrates the transparent cutout format only; do not copy this coworker's identity or clothes.\nThe manager should fill almost the whole portrait height with compact clear margins. Subject alone, isolated on transparent background, true PNG alpha.",
+      "output": "exec-8c135861-42e0-419f-93ae-67cd07c4092e.png",
+      "reason": "Alpha=255 throughout; baked checkerboard"
+    }
+  ]
+}

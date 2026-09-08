@@ -1,0 +1,8 @@
+node_modules/
+dist/
+artifacts/
+.DS_Store
+public/vendor/
+.env
+.env.*
+[{]console.error(e.message)
