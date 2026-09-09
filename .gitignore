@@ -6,3 +6,4 @@ public/vendor/
 .env
 .env.*
 [{]console.error(e.message)
+.turbo/

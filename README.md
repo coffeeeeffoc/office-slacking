@@ -12,17 +12,17 @@ Windows PowerShell：
 
 ```powershell
 Set-Location 'F:\playground\playground-ai\office-slacking'
-npm ci
-npm run dev
+ppnpm install --frozen-lockfile
+pnpm dev
 ```
 
 浏览器打开 <http://localhost:5173>。按 `Ctrl+C` 停止服务。端口被占用时可先执行 `$env:PORT = '5174'`，再启动服务并访问相应端口。
 
 ```powershell
-npm test          # 规则、路线、骨骼接地与桌面交互回归
-npm run check    # JavaScript 语法检查
-npm run build    # 生成 dist 静态文件
-npm run preview  # 从 dist 启动本地预览，默认端口同为 5173
+pnpm test          # 规则、路线、骨骼接地与桌面交互回归
+pnpm check    # JavaScript 语法检查
+pnpm build    # 生成 dist 静态文件
+pnpm preview  # 从 dist 启动本地预览，默认端口同为 5173
 ```
 
 开发服务与预览服务默认使用同一端口，切换前先停止前一个服务。
@@ -53,7 +53,7 @@ npm run preview  # 从 dist 启动本地预览，默认端口同为 5173
 
 ## 静态交付
 
-`npm ci` 的安装后脚本会从本地 `node_modules` 复制 Three.js 及所需附属模块到 `public/vendor/three/`；页面通过 import map 引用这些本地文件。`npm run build` 刷新本地依赖副本并复制运行所需文件到 `dist`：
+`ppnpm install --frozen-lockfile` 的安装后脚本会从本地 `node_modules` 复制 Three.js 及所需附属模块到 `public/vendor/three/`；页面通过 import map 引用这些本地文件。`pnpm build` 刷新本地依赖副本并复制运行所需文件到 `dist`：
 
 ```text
 dist/
@@ -79,7 +79,7 @@ dist/
 
 ## 验证与当前边界
 
-本次 `npm test` **24/24**、语法检查和静态构建通过，覆盖：
+本次 `pnpm test` **24/24**、语法检查和静态构建通过，覆盖：
 
 - 原有独立证据、连续收放、暂停、可补救问答、胜负条件、两条路线可通关与 30/60 fps 时间步等价。
 - 四向与俯仰投影、角度回绕、人物距离、全局时间驱动的连续路线；对两条路线按 0.01 秒采样检查脚底高度、家具碰撞、通道边界、渐变转向和移动方向。
@@ -94,3 +94,13 @@ dist/
 实体场景需要 WebGL2，不支持时会给出可见提示，不以平面背景平移冒充三维环顾。旧全景和二维人物素材保留为历史设计素材，已不作为运行时的环顾方案。手部仍有图片表现，饮水通过画面与声音反馈表达；音频混合本地实录片段和 Web Audio 底噪，无中文角色配音。尚未在真实手机上验证触摸手感、音频延迟与性能，也没有 B 站 SDK、广告、后端或原文档中的全部关卡。
 
 早期工位、手持手机和人物图像由 imagegen 生成，提示记录保留在 [prompts.json](public/assets/prompts.json)、[phone-prompt.json](public/assets/phone-prompt.json) 与 [surround-prompts.json](public/assets/surround-prompts.json)。界面可选加载 Google Fonts，无法加载时使用系统字体回退；游戏必需的脚本、模型和图片均随构建产物提供。
+
+## pnpm 与 small-games 集成
+
+使用 Node.js 24 与 pnpm 8.14.1。独立克隆后执行 `pnpm install --frozen-lockfile`、`pnpm dev`、`pnpm test`、`pnpm build`。静态产物位于 `dist/`，可部署到任意静态服务器。
+
+本仓库同时作为 [small-games](https://github.com/coffeeeeffoc/small-games) 的 `games/office-slacking` Git submodule。在父仓库运行 `pnpm --filter @coffeeeeffoc/office-slacking dev` 可独立开发；父仓库的 Web Shell 构建会包含静态产物。内部技术栈及游戏逻辑保持独立。
+
+`pnpm-lock.yaml` 用于本仓库的独立安装；父仓库根锁文件用于 workspace 安装。依赖变更后需分别更新两份锁文件。先提交并推送本仓库，再在父仓库提交 submodule 的版本指针。
+
+推送到 `main` 自动执行测试、构建并部署到 [GitHub Pages](https://coffeeeeffoc.github.io/office-slacking/)，也支持 Actions 手动触发。其他分支和 PR 自动测试、构建，不覆盖线上站点。仓库 Pages 的 Source 使用 **GitHub Actions**。

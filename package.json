@@ -1,5 +1,5 @@
 {
-  "name": "office-slacking",
+  "name": "@coffeeeeffoc/office-slacking",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -13,5 +13,9 @@
   },
   "dependencies": {
     "three": "0.180.0"
+  },
+  "packageManager": "pnpm@8.14.1",
+  "engines": {
+    "node": ">=22.13.0"
   }
 }
