@@ -6,13 +6,13 @@
 
 ## 启动
 
-已使用 Node.js 24.12.0 验证。唯一 npm 运行依赖为固定版本的 **Three.js 0.180.0**；首次启动需要安装锁定依赖。浏览器必须支持 **WebGL2**。
+已使用 Node.js 24.21.0、pnpm 12.6.0 验证。唯一 npm 运行依赖为固定版本的 **Three.js 0.180.0**；首次启动需要安装锁定依赖。浏览器必须支持 **WebGL2**。
 
 Windows PowerShell：
 
 ```powershell
 Set-Location 'F:\playground\playground-ai\office-slacking'
-ppnpm install --frozen-lockfile
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
@@ -53,7 +53,7 @@ pnpm preview  # 从 dist 启动本地预览，默认端口同为 5173
 
 ## 静态交付
 
-`ppnpm install --frozen-lockfile` 的安装后脚本会从本地 `node_modules` 复制 Three.js 及所需附属模块到 `public/vendor/three/`；页面通过 import map 引用这些本地文件。`pnpm build` 刷新本地依赖副本并复制运行所需文件到 `dist`：
+`pnpm install --frozen-lockfile` 的安装后脚本会从本地 `node_modules` 复制 Three.js 及所需附属模块到 `public/vendor/three/`；页面通过 import map 引用这些本地文件。`pnpm build` 刷新本地依赖副本并复制运行所需文件到 `dist`：
 
 ```text
 dist/
@@ -97,7 +97,7 @@ dist/
 
 ## pnpm 与 small-games 集成
 
-使用 Node.js 24 与 pnpm 8.14.1。独立克隆后执行 `pnpm install --frozen-lockfile`、`pnpm dev`、`pnpm test`、`pnpm build`。静态产物位于 `dist/`，可部署到任意静态服务器。
+使用 Node.js 24.21.0 与 pnpm 12.6.0。独立克隆后执行 `pnpm install --frozen-lockfile`、`pnpm dev`、`pnpm test`、`pnpm build`。静态产物位于 `dist/`，可部署到任意静态服务器。
 
 本仓库同时作为 [small-games](https://github.com/coffeeeeffoc/small-games) 的 `games/office-slacking` Git submodule。在父仓库运行 `pnpm --filter @coffeeeeffoc/office-slacking dev` 可独立开发；父仓库的 Web Shell 构建会包含静态产物。内部技术栈及游戏逻辑保持独立。
 
