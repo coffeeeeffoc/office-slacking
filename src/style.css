@@ -232,7 +232,6 @@ dialog::backdrop { background: #1e2a1da3; backdrop-filter: blur(5px); }
 dialog h2 { font: 500 28px/1.6 'Noto Serif SC',serif; margin: 18px 0 14px; }
 dialog p { font-size: 11px; line-height: 2; color: #879173; }
 .modal-eyebrow { font-size: 8px; color: #9aa187; letter-spacing: 3px; }
-.dialog-close { position: absolute; right: 15px; top: 12px; font-size: 22px; color: #8b947a; background: transparent; padding: 7px; }
 .help-rows { margin: 25px 0; display: grid; grid-template-columns: 1fr 1.3fr; gap: 18px 12px; font-size: 10px; align-items: center; }
 .help-rows span { color: #9aa187; }
 .help-rows b { font-weight: 400; }
